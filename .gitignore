@@ -1,0 +1,10 @@
+# Ignore IntelliJ files
+*.iml
+.idea
+
+# Ignore target files
+target
+
+# Ignore generated files
+src/main/resources/xssf.xslx
+src/main/resources/sxssf.xslx
