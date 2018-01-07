@@ -40,7 +40,7 @@ public class SXSSFWriter {
         return workbook;
     }
 
-    private static void createFile(String path, SXSSFWorkbook workbook) {
+    static void createFile(String path, SXSSFWorkbook workbook) {
         File file = new File(path);
         try (OutputStream outputStream = new FileOutputStream(file)) {
             workbook.write(outputStream);

@@ -9,6 +9,7 @@ public class Main {
         // cleaning previous files
         String xssfPath = "src/main/resources/xssf.xslx";
         String sxssfPath = "src/main/resources/sxssf.xslx";
+        String templatePath = "src/main/resources/template.xslx";
         deleteFiles(xssfPath, sxssfPath);
 
         // creates a fake csv
@@ -21,6 +22,9 @@ public class Main {
 
         // create the excel file with stream
         SXSSFWriter.createExcelFile(csvFile, sxssfPath);
+
+        // create an excel templating file
+        TemplateWriter.createTemplate(templatePath);
     }
 
     private static void deleteFiles(String xssfPath, String sxssfPath) {

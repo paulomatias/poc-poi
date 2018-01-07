@@ -29,10 +29,10 @@ public class XSSFWriter {
                 cell.setCellValue(csvFile.getArray()[line][column]);
 
                 // Without streaming, all data is in the memory. You can always access any row at anytime while writing.
-                if (line == 8 && column == 4) {
-                    System.out.println("Can access the row 1, while writing cell " + csvFile.getArray()[line][column] + "! Exception will be thrown:");
-                    sheet.getRow(1).getLastCellNum();
-                }
+//                if (line == 8 && column == 4) {
+//                    System.out.println("Can access the row 1, while writing cell " + csvFile.getArray()[line][column] + "! Exception will be thrown:");
+//                    sheet.getRow(1).getLastCellNum();
+//                }
             }
         }
         return workbook;

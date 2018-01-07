@@ -8,3 +8,4 @@ target
 # Ignore generated files
 src/main/resources/xssf.xslx
 src/main/resources/sxssf.xslx
+src/main/resources/template.xslx
