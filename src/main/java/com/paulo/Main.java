@@ -10,7 +10,7 @@ public class Main {
         String xssfPath = "src/main/resources/xssf.xslx";
         String sxssfPath = "src/main/resources/sxssf.xslx";
         String templatePath = "src/main/resources/template.xslx";
-        deleteFiles(xssfPath, sxssfPath);
+        deleteFiles(xssfPath, sxssfPath, templatePath);
 
         // creates a fake csv
         int lineNumber = 500;
@@ -27,10 +27,9 @@ public class Main {
         TemplateWriter.createTemplate(templatePath);
     }
 
-    private static void deleteFiles(String xssfPath, String sxssfPath) {
-        File xssfFile = new File(xssfPath);
-        File sxssfFile = new File(sxssfPath);
-        xssfFile.delete();
-        sxssfFile.delete();
+    private static void deleteFiles(String... path) {
+        for (String s : path) {
+            new File(s).delete();
+        }
     }
 }

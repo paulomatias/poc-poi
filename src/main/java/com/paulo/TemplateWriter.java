@@ -5,7 +5,6 @@ import org.apache.poi.POIXMLProperties.CoreProperties;
 import org.apache.poi.POIXMLProperties.CustomProperties;
 import org.apache.poi.hssf.util.HSSFColor;
 import org.apache.poi.ss.SpreadsheetVersion;
-import org.apache.poi.ss.usermodel.CellStyle;
 import org.apache.poi.ss.usermodel.DataValidationConstraint;
 import org.apache.poi.ss.usermodel.DataValidationHelper;
 import org.apache.poi.ss.usermodel.Name;
@@ -70,7 +69,7 @@ public class TemplateWriter {
         // Liste déroulante
         DataValidationHelper dvHelper = sheet.getDataValidationHelper();
         DataValidationConstraint dvConstraint = dvHelper.createFormulaListConstraint("nomDeMaContrainteSansTiretEtSansCaracteresSpeciaux");
-        CellRangeAddressList addressList = new CellRangeAddressList(0, SpreadsheetVersion.EXCEL2007.getMaxRows() - 1, 2, 2);
+        CellRangeAddressList addressList = new CellRangeAddressList(0, SpreadsheetVersion.EXCEL2007.getMaxRows() - 1, 2, 2  );
         XSSFDataValidation validation = (XSSFDataValidation) dvHelper.createValidation(dvConstraint, addressList);
         validation.createPromptBox("MCM Team", "Nom des personnes dans la team MCI/MCM");
         validation.setShowPromptBox(true);
@@ -84,7 +83,6 @@ public class TemplateWriter {
         font.registerTo(wb.getStylesSource());
 
         XSSFCellStyle cellStyle = workbook.getXSSFWorkbook().createCellStyle();
-        cellStyle.setFillPattern(CellStyle.SOLID_FOREGROUND);
         cellStyle.setFont(font);
         cellStyle.setFillForegroundColor(new XSSFColor(new byte[]{(byte) 255, (byte) 112, (byte) 187, (byte) 50}));
         SXSSFCell cellFont = row.createCell(3);
